@@ -1,0 +1,7 @@
+{
+    "name": "practice-03-ts-array-function",
+    "version": "1.0.0",
+    "dependencies": {
+        "typescript": "^4.1.5"
+    }
+}
