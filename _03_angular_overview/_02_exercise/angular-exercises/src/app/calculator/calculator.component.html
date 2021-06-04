@@ -1,0 +1,35 @@
+<div class = title >Calculator</div>
+      <table border="1">
+         <tr>
+            <td colspan="3"><input type="text" id="result" [value]='value'/></td>
+            <!-- clr() function will call clr to clear all value -->
+            <td><input type="button" value="c" (click)='cls()'/></td>
+         </tr>
+         <tr>
+            <!-- create button and assign value to each button -->
+            <!-- dis("1") will call function dis to display value -->
+            <td><input type="button" value="1" (click)='dis($event)'/></td>
+            <td><input type="button" value="2" (click)='dis($event)'/> </td>
+            <td><input type="button" value="3" (click)='dis($event)'/> </td>
+            <td><input type="button" value="/" (click)='dis($event)'/> </td>
+         </tr>
+         <tr>
+            <td><input type="button" value="4" (click)='dis($event)'/> </td>
+            <td><input type="button" value="5" (click)='dis($event)'/> </td>
+            <td><input type="button" value="6" (click)='dis($event)'/> </td>
+            <td><input type="button" value="-" (click)='dis($event)'/> </td>
+         </tr>
+         <tr>
+            <td><input type="button" value="7" (click)='dis($event)'/> </td>
+            <td><input type="button" value="8" (click)='dis($event)'/> </td>
+            <td><input type="button" value="9" (click)='dis($event)'/> </td>
+            <td><input type="button" value="+" (click)='dis($event)'/> </td>
+         </tr>
+         <tr>
+            <td><input type="button" value="." (click)='dis($event)'/> </td>
+            <td><input type="button" value="0" (click)='dis($event)'/> </td>
+            <!-- solve function call function solve to evaluate value -->
+            <td><input type="button" value="=" (click)='solve()'/> </td>
+            <td><input type="button" value="*" (click)='dis($event)'/> </td>
+         </tr>
+      </table>
