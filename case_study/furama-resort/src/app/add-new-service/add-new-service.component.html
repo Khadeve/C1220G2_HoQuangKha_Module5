@@ -1,0 +1,82 @@
+<div class="row container w-75 bg-light p-3 ml-auto mr-auto">
+    <div class="col">
+        <h2 class="text-center mb-3">New Service</h2>
+    
+        <!--        Name--------------->
+        <div class="form-group">
+            <label for="serviceName">Name: </label>
+            <input type="text" class="form-control" id="serviceName" placeholder="Service name...">
+        </div>
+
+        <!--        Area--------------->
+        <div class="form-group">
+            <label for="serviceArea">Area: </label>
+            <input type="text" class="form-control" id="serviceArea" placeholder="Service area...">
+        </div>
+
+        <!--        Cost--------------->
+        <div class="form-group">
+            <label for="serviceCost">Cost<span style="color:red;">*</span>: </label>
+            <input type="text" class="form-control" id="serviceCost" placeholder="Service cost...">
+        </div>
+
+        <!--        max people--------------->
+        <div class="form-group">
+            <label for="serviceMaxPeople">Max people: </label>
+            <input type="number" class="form-control" id="serviceMaxPeople" placeholder="Service max number...">
+        </div>
+
+        <!--        standard room--------------->
+        <div class="form-group">
+            <label for="serviceStandardRoom">Standard room: </label>
+            <input type="text" class="form-control" id="serviceStandardRoom" placeholder="Standard room...">
+        </div>
+
+        <!--        Other convenience-->
+        <div class="form-group">
+            <label for="otherConvenience">Other convenient: </label>
+            <textarea class="form-control" id="otherConvenience" rows="3" placeholder="Other conveniences"></textarea>
+        </div>
+
+        <!--        Pool area--------------->
+        <div class="form-group">
+            <label for="poolArea">Pool area: </label>
+            <input type="text" class="form-control" id="poolArea" placeholder="Pool area...">
+        </div>
+        <!--        number of floor--------------->
+        <div class="form-group">
+            <label for="numberOfFloors">Number of floors: </label>
+            <input type="number" class="form-control" id="numberOfFloors" placeholder="Number of floors...">
+        </div>
+
+        <!-- rent type-------- -->
+        <div class="form-group">
+            <label for="rentType">Rent type<span style="color:red;">*</span>: </label>
+            <select class="form-control">
+                <option value="hour">hour</option>
+                <option value="day">day</option>
+                <option value="month">month</option>
+                <option value="year">year</option>
+            </select>
+        </div>
+
+        <!-- service type-------- -->
+        <div class="form-group">
+            <label for="serviceType">Service type<span style="color:red;">*</span>: </label>
+            <select class="form-control">
+                <option value="room">room</option>
+                <option value="house">house</option>
+                <option value="villa">villa</option>
+            </select>
+        </div>
+
+        <!-- Submit button -->
+        <div class="form-group row">
+            <div class="col-sm-5"></div>
+            <div class="col-sm-2">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+            <div class="col-sm-5"></div>
+        </div>
+    </div>
+</div>
