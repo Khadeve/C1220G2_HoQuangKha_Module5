@@ -1,3 +1,23 @@
-<label for="favcolor">Select your favorite color:</label>
-<input type="color" id="favcolor" name="favcolor" [(ngModel)] = "colorValue"><br><br>
-<div class="container" [style.background-color] = 'colorValue'></div>
+
+<div class="container">
+    <div class="color-display" [style.background-color] = 'colorValue'></div>
+    <p>{{ colorValue }}</p>
+    <hr>
+    <table>
+        <tr>
+            <td>Red</td>
+            <td><input type="range" min="0" max="255" [(ngModel)]="redValue" (input)='changeColor()'><span> {{ redValue }}</span></td>
+        </tr>
+
+        <tr>
+            <td>Green</td>
+            <td><input type="range" min="0" max="255" [(ngModel)]='greenValue' (input)='changeColor()'><span> {{ greenValue }}</span></td>
+        </tr>
+
+        <tr>
+            <td>Blue</td>
+            <td><input type="range" min="0" max="255" [(ngModel)]='blueValue' (input)='changeColor()'><span> {{ blueValue }}</span></td>
+        </tr>
+    </table>
+</div>
+
