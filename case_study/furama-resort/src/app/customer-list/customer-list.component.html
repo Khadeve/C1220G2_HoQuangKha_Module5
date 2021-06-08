@@ -28,7 +28,7 @@
     </thead>
     <tbody>
         <tr *ngFor="let customer of customerList | paginate: { id: 'listing_pagination',
-            itemsPerPage: 1,
+            itemsPerPage: 2,
             currentPage: page,
             totalItems: totalCustomers
         }">

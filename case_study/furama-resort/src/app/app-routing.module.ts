@@ -5,12 +5,12 @@ import { AddNewEmployeeComponent } from './add-new-employee/add-new-employee.com
 import { AddNewServiceComponent } from './add-new-service/add-new-service.component';
 import { CustomerListComponent } from './customer-list/customer-list.component';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
-import { HomeComponent } from './home/home.component';
+import { HomepageBodyComponent } from './layouts/homepage-body/homepage-body.component';
 import { ServiceListComponent } from './service-list/service-list.component';
 
 
 const routes: Routes = [
-  {path: '', component: HomeComponent},
+  {path: '', component: HomepageBodyComponent},
   {path: "add-new-customer", component: AddNewCustomerComponent},
   {path: "customer-list", component: CustomerListComponent},
   {path: "add-new-employee", component: AddNewEmployeeComponent},

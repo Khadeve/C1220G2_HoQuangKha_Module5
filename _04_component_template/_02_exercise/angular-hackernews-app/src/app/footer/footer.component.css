@@ -1,0 +1,31 @@
+.container {
+    margin-left: 460px;
+}
+
+ul {
+    list-style: none;
+    padding: 5px;
+}
+
+li {
+    display: inline;
+    margin-right: 5px;
+    font-size: 13px;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(80, 79, 76);
+}
+
+.search-field {
+    margin-left: 80px;
+}
+
+.search-field span {
+    color: rgb(80, 79, 76);
+}
+
+.search-field input {
+    width: 120px;
+}
