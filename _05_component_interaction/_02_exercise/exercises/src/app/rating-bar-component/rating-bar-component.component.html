@@ -1,0 +1,9 @@
+
+<h2>Rating Bar</h2>
+<p>Value: {{ ratingScore }}</p>
+<div class="container">
+  <div *ngFor="let ratingUnit of ratingUnits" class="flex-item"
+   [style.background-color]="ratingUnit.active ? 'red' : 'gray'" (click)='rate(ratingUnit.value)'>
+    {{ ratingUnit.value }}
+  </div>
+</div>

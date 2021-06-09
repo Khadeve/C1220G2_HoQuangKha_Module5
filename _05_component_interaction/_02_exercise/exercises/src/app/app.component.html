@@ -1,0 +1,13 @@
+<!-- <app-rating-bar-component></app-rating-bar-component> -->
+
+<div class="container w-50 bg-success p-2">
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8">
+        <input type="number" class="form-control" placeholder="Set time..." (change)='setParentValue($event)'>
+        </div>
+        <div class="col-2"></div>
+    </div>
+</div>
+
+<app-countdown-timer [value]='parentValue'></app-countdown-timer>

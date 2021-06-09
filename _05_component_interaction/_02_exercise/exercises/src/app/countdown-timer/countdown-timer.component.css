@@ -1,0 +1,7 @@
+.text-danger {
+    font-size: 50px;
+}
+
+button:active {
+    outline-style: none;
+}
