@@ -1,0 +1,138 @@
+<div class="container bg-light w-50 pt-3">
+    <!-- Title -->
+    <h2 class="text-center">Subscribe Form</h2>
+    <form [formGroup]="subscribeForm" (ngSubmit)='onSubmit()'>
+        <!-- email -->
+        <div class="form-group">
+            <label for="email">Email address:</label>
+            <input formControlName="email" type="email"
+             class="form-control" placeholder="Enter email">
+        </div>
+        <!-- validate emai -->
+        <div class="alert alert-danger" role="alert"
+        *ngIf="subscribeForm.controls.email.hasError('required') && subscribeForm.controls.email.dirty">
+            Email is mandatory!
+        </div>
+        <div class="alert alert-danger" role="alert"
+        *ngIf="subscribeForm.controls.email.hasError('email')">
+            Invalid Email!
+        </div>
+        <!-- Password -->
+        <fieldset formGroupName="pwGroup">
+            <label for="password">Password:</label>
+            <div class="form-group">
+                <input id="password" type="password"
+                 formControlName="password" class="form-control" placeholder="Enter password">
+            </div>
+            <!-- validate password -->
+            <div class="alert alert-danger" role="alert"
+            *ngIf="subscribeForm.controls.pwGroup.hasError('required', 'password')
+             && subscribeForm.controls.pwGroup.get('password').dirty">
+                Password is mandatory!
+            </div>
+
+            <!-- Validate min length -->
+            <div class="alert alert-danger" role="alert"
+            *ngIf="subscribeForm.controls.pwGroup.get('password').hasError('minlength')">
+                Password must be at least 6 characters!
+            </div>
+
+            <label for="confirmPassword">Confirm Password:</label>
+            <div class="form-group">
+                <input id="confirmPassword" type="password"
+                 formControlName="confirmPassword" class="form-control" placeholder="Enter password again">
+            </div>
+            <!-- validate match password -->
+            <div class="alert alert-danger" role="alert"
+            *ngIf="subscribeForm.hasError('passwordnotmatch', ['pwGroup'])">
+                Passwords not match!
+            </div>
+        </fieldset>
+
+        <!-- Gender -->
+        <div class="form-group row">
+            <div class="col-sm-2">
+                Gender:
+            </div>
+            <div class="col-sm-9">
+                <div class="form-check form-check-inline">
+                    <input formControlName="gender" class="form-check-input" type="radio" id="male" value="male">
+                    <label class="form-check-label" for="male">Male</label>
+                </div>
+        
+                <div class="form-check form-check-inline">
+                    <input formControlName="gender" class="form-check-input" type="radio" id="female" value="female">
+                    <label class="form-check-label" for="female">Female</label>
+                </div>
+        
+                <div class="form-check form-check-inline">
+                    <input formControlName="gender" class="form-check-input" type="radio" id="other" value="other">
+                    <label class="form-check-label" for="other">Other</label>
+                </div>
+            </div>
+            <div class="col-sm-1">
+            </div>
+        </div>
+        <!-- validate required gender -->
+        <div class="alert alert-danger" role="alert"
+        *ngIf="subscribeForm.controls.gender.hasError('required')">
+            Gender is mandatory!
+        </div>
+        <!-- Age -->
+        <div class="form-group">
+            <label for="age">Age:</label>
+            <input formControlName="age" type="number"
+             class="form-control" placeholder="Enter age">
+        </div>
+        <!-- validate required age -->
+        <div class="alert alert-danger" role="alert"
+        *ngIf="subscribeForm.controls.age.hasError('required')
+            && subscribeForm.controls.age.dirty">
+            Age is mandatory!
+        </div>
+        <!-- validate min age -->
+        <div class="alert alert-danger" role="alert"
+        *ngIf="subscribeForm.controls.age.hasError('min')">
+            Age must be at least 18!
+        </div>
+
+        <!-- phone number -->
+        <div class="form-group">
+            <label for="phone">Phone number:</label>
+            <input formControlName="phone" type="text"
+             class="form-control" placeholder="Enter phone number">
+        </div>
+        <!-- Validate phone number -->
+        <div class="alert alert-danger" role="alert"
+        *ngIf="subscribeForm.controls.phone.hasError('required')
+            && subscribeForm.controls.phone.dirty">
+            Phone number is mandatory!
+        </div>
+        <!-- validate phone number pattern -->
+        <div class="alert alert-danger" role="alert"
+        *ngIf="subscribeForm.controls.phone.hasError('pattern')">
+            Invalid format! (format: +84xxxxxxxxx|+84xxxxxxxxxx)!
+        </div>
+
+
+        <!-- Country -->
+        <div class="form-group">
+            <label for="country">Country:</label>
+            <select id='country' class="form-control" name="country" formControlName="country">
+                <option value="vn">Vietnam</option>
+                <option value="us">United State</option>
+                <option value="uk">United Kingdom</option>
+            </select>
+        </div>
+        <!-- Validate country -->
+        <div class="alert alert-danger" role="alert"
+        *ngIf="subscribeForm.controls.country.hasError('required')">
+            Country is mandatory!
+        </div>
+
+        <button type="submit" class="btn btn-success" [disabled]='subscribeForm.invalid'>Subscribe</button>
+    </form>
+</div>
+
+
+
