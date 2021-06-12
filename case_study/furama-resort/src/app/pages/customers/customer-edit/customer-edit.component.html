@@ -1,0 +1,150 @@
+<div class="row container w-75 bg-light p-3 ml-auto mr-auto">
+    <div class="col">
+        <h2 class="text-center mb-3">Edit Customer</h2>
+        <!-- Customer form -->
+        <form [formGroup]="customerForm" (ngSubmit)='onSubmit()'>
+        <!-- ID -->
+        <div class="form-group row" style="display: none;">
+            <label for="inputId3" class="col-sm-3 col-form-label">ID<span class="text-danger">*</span></label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" id="inputId3" placeholder="Id" formControlName="id">
+                <!-- Validate id -->
+                <small class="alert alert-danger form-text" role="alert"
+                    *ngIf="customerForm.controls.id.hasError('required') && customerForm.controls.id.dirty">
+                    ID is mandatory!
+                </small>
+                <small class="alert alert-danger form-text" role="alert"
+                    *ngIf="customerForm.controls.id.hasError('pattern')">
+                    Wrong format: KH-XXXX
+                </small>
+            </div>
+        </div>
+        
+
+        <!-- Name -->
+        <div class="form-group row">
+            <label for="inputName3" class="col-sm-3 col-form-label">Name<span class="text-danger">*</span></label>
+            <div class="col-sm-9">
+                <input  type="text" class="form-control" id="inputName3" placeholder="Name" formControlName="name">
+            </div>
+        </div>
+
+        <!-- date of birth -->
+        <div class="form-group row">
+            <label for="dateOfBirth" class="col-sm-3 col-form-label">Date of birth</label>
+            <div class="col-sm-9">
+                <!-- <input type="text" class="form-control" id="dateOfBirth" placeholder="Date of birth" formControlName="dateOfBirth"> -->
+                <app-datepicker [model2]="dateOfBirth" (model3)="pickDateOfBirth($event)"></app-datepicker>
+            </div>
+        </div>
+
+        <!-- gender-------- -->
+
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label" for="inputGender3">Gender</label>
+            <div class="col-sm-1">
+                <div class="form-check-inline">
+                    <input class="form-check-input" type="radio" id="male" value="male"
+                     [checked]="customer.gender === 'male'" formControlName="gender">
+                    <label class="form-check-label" for="male">
+                      Male
+                    </label>
+                </div>  
+            </div>
+            <div class="col-sm-1">
+                <div class="form-check-inline">
+                    <input class="form-check-input" type="radio" id="female" value="female"
+                     [checked]="customer.gender === 'female'" formControlName="gender">
+                    <label class="form-check-label" for="female">
+                      Female
+                    </label>
+                </div>
+            </div>
+            <div class="col-sm-1">
+                <div class="form-check-inline">
+                    <input class="form-check-input" type="radio" id="other" value="other"
+                     [checked]="customer.gender === 'other'" formControlName="gender">
+                    <label class="form-check-label" for="other">
+                      Other
+                    </label>
+                </div>
+            </div>
+            <div class="col-sm-6"></div>
+        </div>
+
+        <!-- id card -->
+        <div class="form-group row">
+            <label for="inputIdCard3" class="col-sm-3 col-form-label">ID Card<span
+                    class="text-danger">*</span></label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control"
+                       id="inputIdCard3" placeholder="Id card" formControlName="idCard">
+                <small class="alert alert-danger form-text" role="alert"
+                    *ngIf="customerForm.controls.idCard.hasError('pattern')">
+                    Wrong format: 9 or 12 digits only!
+                </small>
+            </div>
+        </div>
+
+        <!-- phone number -->
+        <div class="form-group row">
+            <label for="inputPhoneNumber3" class="col-sm-3 col-form-label">Phone number<span
+                    class="text-danger">*</span></label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control"
+                       id="inputPhoneNumber3" placeholder="Phone number" formControlName="phoneNumber">
+                <small class="alert alert-danger form-text" role="alert"
+                    *ngIf="customerForm.controls.phoneNumber.hasError('pattern')">
+                    Wrong format: 090xxxxxxx or 091xxxxxxx
+                </small>
+            </div>
+        </div>
+
+        <!-- Email -->
+        <div class="form-group row">
+            <label for="inputEmail3" class="col-sm-3 col-form-label">Email</label>
+            <div class="col-sm-9">
+                <input type="email" class="form-control"
+                       id="inputEmail3" placeholder="Email" formControlName="email">
+                <small class="alert alert-danger form-text" role="alert"
+                    *ngIf="customerForm.controls.email.hasError('email')">
+                    Wrong format (abc@abc.com)
+                </small>
+            </div>
+        </div>
+
+        <!-- address -->
+        <div class="form-group row">
+            <label for="inputAddress3" class="col-sm-3 col-form-label">Address</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control"
+                       id="inputAddress3" placeholder="Address" formControlName="address">
+            </div>
+        </div>
+
+        <!-- customer type-------- -->
+        <div class="form-group row">
+            <label class="col-sm-3 col-form-label" for="inputCustomerType3">Customer type<span
+                    class="text-danger">*</span></label>
+            <div class="col-sm-9">
+                <select id="inputCustomerType3" class="form-control" formControlName="customerType">
+                    <option value="member">member</option>
+                    <option value="silver">silver</option>
+                    <option value="gold">gold</option>
+                    <option value="platinum">platinum</option>
+                    <option value="diamond">diamond</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Submit button -->
+        <div class="form-group row">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-9">
+                <button type="submit" class="btn btn-primary" [disabled]='customerForm.invalid'>Save</button>
+            </div>
+        </div>
+        </form>
+    </div>
+</div>
+

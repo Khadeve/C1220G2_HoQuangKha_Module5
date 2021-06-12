@@ -1,0 +1,92 @@
+{
+  "customerList": [
+    {
+      "id": "KH-0001",
+      "name": "Nguyen Huy",
+      "dateOfBirth": "23/01/1992",
+      "gender": "male",
+      "idCard": "123456789",
+      "phoneNumber": "0911111116",
+      "email": "nguyenhuy@gmail.com",
+      "address": "Da Nang",
+      "customerType": "gold"
+    },
+    {
+      "id": "KH-0002",
+      "name": "Thanh Cong",
+      "dateOfBirth": "23/02/1992",
+      "gender": "female",
+      "idCard": "123456787",
+      "phoneNumber": "0911111112",
+      "email": "thanhcong@gmail.com",
+      "address": "Da Nang",
+      "customerType": "member"
+    },
+    {
+      "id": "KH-0003",
+      "name": "Quoc Tuan",
+      "dateOfBirth": "23/02/1992",
+      "gender": "female",
+      "idCard": "123456787",
+      "phoneNumber": "0911111112",
+      "email": "quoctuan@gmail.com",
+      "address": "Quang Tri",
+      "customerType": "silver"
+    },
+    {
+      "id": "KH-0004",
+      "name": "Quoc Tu",
+      "dateOfBirth": "24/2/1992",
+      "gender": "female",
+      "idCard": "123456787",
+      "phoneNumber": "0911111112",
+      "email": "quoctuan@gmail.com",
+      "address": "Quang Tri",
+      "customerType": "silver"
+    },
+    {
+      "id": "KH-0005",
+      "name": "Kha Ho Quang",
+      "dateOfBirth": "29/12/1995",
+      "gender": "male",
+      "idCard": "123456789",
+      "phoneNumber": "0903333333",
+      "email": "kha@gmail.com",
+      "address": "Binh Dinh",
+      "customerType": "platinum"
+    },
+    {
+      "id": "KH-0006",
+      "name": "Ai Nu",
+      "dateOfBirth": "2/1/1995",
+      "gender": "female",
+      "idCard": "987654321",
+      "phoneNumber": "0910000000",
+      "email": "ainu@gmail.com",
+      "address": "Da nang",
+      "customerType": "diamond"
+    },
+    {
+      "id": "KH-0007",
+      "name": "Thanh Tai",
+      "dateOfBirth": "1-6-2021",
+      "gender": "male",
+      "idCard": "111111111",
+      "phoneNumber": "0900000000",
+      "email": "tai@gmail",
+      "address": "Quang Tri",
+      "customerType": "gold"
+    },
+    {
+      "id": "KH-0008",
+      "name": "Sang Le",
+      "dateOfBirth": "30/6/2021",
+      "gender": "other",
+      "idCard": "111111111",
+      "phoneNumber": "0905555555",
+      "email": "sang@gmail.com",
+      "address": "Quang Nam",
+      "customerType": "member"
+    }
+  ]
+}
