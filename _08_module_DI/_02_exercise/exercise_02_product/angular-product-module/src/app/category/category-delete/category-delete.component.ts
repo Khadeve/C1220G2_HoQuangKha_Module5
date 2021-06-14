@@ -1,20 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { Category } from 'src/app/model/category';
 import { CategoryService } from 'src/app/service/category.service';
 
 @Component({
-  selector: 'app-category-edit',
-  templateUrl: './category-edit.component.html',
-  styleUrls: ['./category-edit.component.css']
+  selector: 'app-category-delete',
+  templateUrl: './category-delete.component.html',
+  styleUrls: ['./category-delete.component.css']
 })
-export class CategoryEditComponent implements OnInit {
+export class CategoryDeleteComponent implements OnInit {
 
+  // categoryForm: FormGroup = new FormGroup({
+  //   id: new FormControl(''),
+  //   name: new FormControl('')
+  // });
   categoryForm: FormGroup;
   id: number;
-  
-  constructor(private categoryService: CategoryService, private activatedRoute: ActivatedRoute) {
+
+  constructor(private categoryService: CategoryService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute) {
     this.activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
       this.id = +paramMap.get('id');
       const category = this.getCategory(this.id);
@@ -32,10 +38,9 @@ export class CategoryEditComponent implements OnInit {
     return this.categoryService.findById(id);
   }
 
-  updateCategory(id: number): void {
-    const category = this.categoryForm.value;
-    this.categoryService.updateCategory(id, category);
-    alert('Cập nhật thành công');
+  deleteCategory(id: number) {
+    this.categoryService.deleteCategory(id);
+    this.router.navigate(['/category/list']);
   }
 
 }
