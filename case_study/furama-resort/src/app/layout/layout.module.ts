@@ -8,8 +8,6 @@ import { DatepickerComponent } from './datepicker/datepicker.component';
 import { NgbDatepickerModule, NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { NgbdModalConfirmComponent } from './ngbd-modal-confirm/ngbd-modal-confirm.component';
-
 
 
 @NgModule({
@@ -18,8 +16,7 @@ import { NgbdModalConfirmComponent } from './ngbd-modal-confirm/ngbd-modal-confi
     HeaderComponent,
     HomepageBodyComponent,
     NavbarComponent,
-    DatepickerComponent,
-    NgbdModalConfirmComponent
+    DatepickerComponent
   ],
   imports: [
     CommonModule,
@@ -33,8 +30,7 @@ import { NgbdModalConfirmComponent } from './ngbd-modal-confirm/ngbd-modal-confi
     FooterComponent,
     HeaderComponent,
     HomepageBodyComponent,
-    NavbarComponent,
-    NgbdModalConfirmComponent
+    NavbarComponent
   ]
 })
 export class LayoutModule { }

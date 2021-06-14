@@ -1,37 +1,15 @@
 {
   "customerList": [
     {
-      "id": "KH-0001",
-      "name": "Nguyen Huy",
-      "dateOfBirth": "23/01/1992",
-      "gender": "male",
-      "idCard": "123456789",
-      "phoneNumber": "0911111116",
-      "email": "nguyenhuy@gmail.com",
-      "address": "Da Nang",
-      "customerType": "gold"
-    },
-    {
       "id": "KH-0002",
       "name": "Thanh Cong",
       "dateOfBirth": "23/02/1992",
       "gender": "female",
-      "idCard": "123456787",
+      "idCard": "123456780",
       "phoneNumber": "0911111112",
       "email": "thanhcong@gmail.com",
       "address": "Da Nang",
       "customerType": "member"
-    },
-    {
-      "id": "KH-0003",
-      "name": "Quoc Tuan",
-      "dateOfBirth": "23/02/1992",
-      "gender": "female",
-      "idCard": "123456787",
-      "phoneNumber": "0911111112",
-      "email": "quoctuan@gmail.com",
-      "address": "Quang Tri",
-      "customerType": "silver"
     },
     {
       "id": "KH-0004",
@@ -39,7 +17,7 @@
       "dateOfBirth": "24/2/1992",
       "gender": "female",
       "idCard": "123456787",
-      "phoneNumber": "0911111112",
+      "phoneNumber": "0911111122",
       "email": "quoctuan@gmail.com",
       "address": "Quang Tri",
       "customerType": "silver"
@@ -86,6 +64,28 @@
       "phoneNumber": "0905555555",
       "email": "sang@gmail.com",
       "address": "Quang Nam",
+      "customerType": "member"
+    },
+    {
+      "id": "KH-0010",
+      "name": "Gia Dong",
+      "dateOfBirth": "1/6/2021",
+      "gender": "female",
+      "idCard": "111111111",
+      "phoneNumber": "0900000000",
+      "email": "dong@gmail.com",
+      "address": "Dang Nang",
+      "customerType": "silver"
+    },
+    {
+      "id": "KH-0011",
+      "name": "Nguyen Huy",
+      "dateOfBirth": "30/6/2021",
+      "gender": "male",
+      "idCard": "111111111",
+      "phoneNumber": "0912222222",
+      "email": "nguyenhuy@gmail.com",
+      "address": "Thanh Khe",
       "customerType": "member"
     }
   ]

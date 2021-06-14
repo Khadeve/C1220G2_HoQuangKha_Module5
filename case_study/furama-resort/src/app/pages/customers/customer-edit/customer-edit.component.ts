@@ -4,6 +4,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { CustomerService } from 'src/app/services/customer/customer.service';
 import { Customer } from 'src/app/models/customer';
 import { Observable } from 'rxjs';
+import { MatSnackBar } from '@angular/material/snack-bar';
+
 
 @Component({
   selector: 'app-customer-edit',
@@ -27,7 +29,8 @@ export class CustomerEditComponent implements OnInit {
   id: string;
   customer: Customer = new Customer();
   dateOfBirth: string;
-  constructor(private activatedRouter: ActivatedRoute, private customerService: CustomerService, private router: Router){ }
+  constructor(private activatedRouter: ActivatedRoute, private customerService: CustomerService,
+              private router: Router, private snackBar: MatSnackBar){ }
 
   ngOnInit(): void {
     this.id = this.activatedRouter.snapshot.paramMap.get('id');
@@ -60,11 +63,18 @@ export class CustomerEditComponent implements OnInit {
     newCustomer.dateOfBirth = this.dateOfBirth;
     let customerObservable = this.customerService.updateCustomer(newCustomer);
     customerObservable.subscribe(
-      () => console.log("Update customer successfully"),
+      () => {
+        this.snackBar.open('Update successfully', '', {
+          duration: 3000,
+          verticalPosition: 'top'
+        });
+        this.customerService.filter("Finish edit customer");
+        this.router.navigateByUrl('customer/list');
+      },
       error => console.error("Update customer: " + error),
       () => console.log("Update customer completely")
     );
-    this.router.navigateByUrl('customer/list');
+    
   }
 
   pickDateOfBirth(valueFromChild: string): void {

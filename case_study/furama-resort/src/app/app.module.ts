@@ -7,19 +7,20 @@ import { EmployeesComponent } from './pages/employees/employees.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CustomersModule } from './pages/customers/customers.module';
 import { LayoutModule } from './layout/layout.module';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
     AppComponent,
-    EmployeesComponent
+    EmployeesComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     CustomersModule,
-    LayoutModule
+    LayoutModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

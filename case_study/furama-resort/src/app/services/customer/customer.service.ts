@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Customer } from 'src/app/models/customer';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { Observable, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -27,5 +27,19 @@ export class CustomerService {
 
   updateCustomer(newCustomer: Customer): Observable<Customer> {
     return this.http.put<Customer>(this.customersUrl + '/' + newCustomer.id, newCustomer);
+  }
+
+  deleteCustomer(id: string): Observable<Customer> {
+    return this.http.delete<Customer>(this.customersUrl + '/' + id);
+  }
+
+  private _listener: Subject<any> = new Subject<any>();
+  listen(): Observable<any>{
+    return this._listener.asObservable();
+  }
+
+  // filter as an event of _listener.
+  filter(filterBy: string): void {
+    this._listener.next(filterBy);
   }
 }

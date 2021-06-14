@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
 import { Customer } from 'src/app/models/customer';
 import { CustomerService } from 'src/app/services/customer/customer.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
+
 
 @Component({
   selector: 'app-customer-create',
@@ -16,7 +17,7 @@ export class CustomerCreateComponent implements OnInit {
 
   dateOfBirth: string = '';
   
-  constructor( private customerService: CustomerService, private router: Router ) { }
+  constructor( private customerService: CustomerService, private router: Router, private snackBar: MatSnackBar ) { }
 
   ngOnInit(): void {
     this.customerForm = new FormGroup({
@@ -37,11 +38,17 @@ export class CustomerCreateComponent implements OnInit {
     this.customer.dateOfBirth = this.dateOfBirth;
 
     this.customerService.addNewCustomer(this.customer).subscribe(
-      () => console.log("Add customer successfully"),
+      () => {
+        this.snackBar.open("Create successfully", '', {
+          duration: 3000,
+          verticalPosition: 'top'
+        });
+        this.customerService.filter('Register customer'); //trigger an event when register customer.
+        this.router.navigateByUrl('/customer/list');
+      },
       error => console.error("Add customer: " + error),
       () => console.log("Add customer completely")
     );
-    this.router.navigateByUrl('/customer/list');
   }
 
   pickDateOfBirth(value: string): void {
