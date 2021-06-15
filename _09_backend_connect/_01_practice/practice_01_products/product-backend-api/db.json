@@ -1,0 +1,81 @@
+{
+  "productList": [
+    {
+      "id": 1,
+      "name": "Iphone 12",
+      "price": 2400000,
+      "description": "new",
+      "category": "IPhone"
+    },
+    {
+      "id": 2,
+      "name": "Iphone 11",
+      "price": 1560000,
+      "description": "Almost new",
+      "category": "Samsung"
+    },
+    {
+      "id": 3,
+      "name": "Iphone X",
+      "price": 968000,
+      "description": "97%",
+      "category": "LG"
+    },
+    {
+      "id": 4,
+      "name": "Iphone 8",
+      "price": 7540000,
+      "description": "98%",
+      "category": "Iphone"
+    },
+    {
+      "id": 5,
+      "name": "Iphone 11 Pro",
+      "price": 1895000,
+      "description": "like new",
+      "category": "LG"
+    },
+    {
+      "id": 6,
+      "name": "LG washer",
+      "price": 10000,
+      "description": "From Japan",
+      "category": "IPhone"
+    },
+    {
+      "id": 7,
+      "name": "abc",
+      "price": 100000,
+      "description": "new",
+      "category": "Samsung"
+    },
+    {
+      "id": 8,
+      "name": "Tesla model B",
+      "price": 111111,
+      "description": "USA",
+      "category": "IPhone"
+    },
+    {
+      "id": 9,
+      "name": "xxx",
+      "price": 111,
+      "description": "Old",
+      "category": "Samsung"
+    }
+  ],
+  "categoryList": [
+    {
+      "id": 1,
+      "name": "IPhone"
+    },
+    {
+      "id": 2,
+      "name": "Samsung"
+    },
+    {
+      "id": 3,
+      "name": "LG"
+    }
+  ]
+}
