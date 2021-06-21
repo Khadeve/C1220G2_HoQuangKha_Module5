@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Customer } from 'src/app/models/customer';
 import { HttpClient } from '@angular/common/http';
-import { Observable, Subject } from 'rxjs';
+import { Observable, of, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +15,10 @@ export class CustomerService {
 
   onGet(): Observable<Customer[]> {
     return this.http.get<Customer[]>(this.customersUrl);
+  }
+
+  searchCustomer(term: string): Observable<Customer[]> {
+    return this.http.get<Customer[]>(`${this.customersUrl}/?name=${term}`);
   }
 
   addNewCustomer(newCustomer: Customer): Observable<Customer> {

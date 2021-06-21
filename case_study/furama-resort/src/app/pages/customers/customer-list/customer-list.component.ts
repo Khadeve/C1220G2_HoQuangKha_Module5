@@ -69,4 +69,21 @@ export class CustomerListComponent implements OnInit {
     )
   }
 
+  search(term: string): void {
+    this.customerService.searchCustomer(term).subscribe(
+      customers => {
+        customers.forEach(customer => {
+          let lengthId: number = customer.id.toString().length;
+          let zeroDigits: string = '';
+          for (let i = 1; i <= 4 - lengthId; i++) {
+            zeroDigits += 0;
+          }
+          customer.id = "KH-" + zeroDigits + customer.id;
+        })
+        this.customerList = customers;
+        this.totalCustomers = this.customerList.length;
+      }
+    )
+  }
+
 }
