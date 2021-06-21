@@ -34,7 +34,7 @@ export class CustomerEditComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.activatedRouter.snapshot.paramMap.get('id');
-    let customerObservable: Observable<Customer> = this.customerService.findById(this.id);
+    let customerObservable: Observable<Customer> = this.customerService.findById(this.id.slice(3));
 
     // Get customer from customerObservable.
     customerObservable.subscribe(
@@ -60,6 +60,7 @@ export class CustomerEditComponent implements OnInit {
 
   onSubmit(): void {
     let newCustomer: Customer = Object.assign({}, this.customerForm.value);
+    newCustomer.id = newCustomer.id.slice(3);
     newCustomer.dateOfBirth = this.dateOfBirth;
     let customerObservable = this.customerService.updateCustomer(newCustomer);
     customerObservable.subscribe(

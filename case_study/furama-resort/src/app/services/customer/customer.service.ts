@@ -7,10 +7,10 @@ import { Observable, Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class CustomerService {
-  private customersUrl: string = 'http://localhost:3000/customerList';
+  private customersUrl: string;
 
   constructor(private http: HttpClient) {
-
+    this.customersUrl = 'http://localhost:8080/customers';
   }
 
   onGet(): Observable<Customer[]> {
@@ -18,6 +18,7 @@ export class CustomerService {
   }
 
   addNewCustomer(newCustomer: Customer): Observable<Customer> {
+    newCustomer.id = newCustomer.id.slice(3);
     return this.http.post<Customer>(this.customersUrl, newCustomer);
   }
 
